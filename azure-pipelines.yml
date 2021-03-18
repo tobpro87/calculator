@@ -27,8 +27,8 @@ steps:
     repository: $(imageName)
     command: push
     tags: |
-      test1
-      test2
+      $(Build.BuildNumber)
+      latest
   displayName: Push image
 - task: CMake@1
   inputs:
