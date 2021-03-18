@@ -10,17 +10,22 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  imageName : 'calculator'
+  containerRegistry : 'tobpro87.hub.docker.com'
+
+
+container:
 steps:
 - task: docker@2
   inputs:
-    repository: calculator
+    repository: $(imageName)
     command: build
     dockerfile: Dockerfile
   displayName: Build image
 - task: Docker@2
   inputs:
-    containerRegistry: |
-      tobpro87.hub.docker.com
+    containerRegistry: $(containerRegistry)
     repository: $(imageName)
     command: push
     tags: |
