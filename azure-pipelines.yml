@@ -16,6 +16,17 @@ steps:
     repository: calculator
     command: build
     dockerfile: Dockerfile
+  displayName: Build image
+- task: Docker@2
+  inputs:
+    containerRegistry: |
+      tobpro87.hub.docker.com
+    repository: $(imageName)
+    command: push
+    tags: |
+      test1
+      test2
+  displayName: Push image
 - task: CMake@1
   inputs:
     cmakeArgs: '..'
