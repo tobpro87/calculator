@@ -34,4 +34,4 @@ steps:
   inputs:
     testResultsFormat: 'CTest'
     testResultsFiles: '**/TEST.xml'
-    searchFolder: '$(System.DefaultWorkingDirectory)/build/Testing'
+    searchFolder: '$(Build.SourcesDirectory)/build/Testing'
