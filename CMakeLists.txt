@@ -23,7 +23,7 @@ add_test(
 add_custom_target(
 	BUILD_TEST
     COMMAND
-	"${CMAKE_CTEST_COMMAND}"
+	"${CMAKE_CTEST_COMMAND}" -T Test
     WORKING_DIRECTORY
 	"${CMAKE_BINARY_DIR}"	
 )

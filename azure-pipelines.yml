@@ -35,3 +35,6 @@ steps:
     testResultsFormat: 'CTest'
     testResultsFiles: '**/TEST.xml'
     searchFolder: '$(Build.SourcesDirectory)/build/Testing'
+- task: CmdLine@2
+  inputs:
+    script: 'find .'
