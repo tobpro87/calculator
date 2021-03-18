@@ -30,3 +30,8 @@ steps:
 - task: CMake@1
   inputs:
     cmakeArgs: '--build . --target BUILD_TEST'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'CTest'
+    testResultsFiles: '**/TEST.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)/Testing'
