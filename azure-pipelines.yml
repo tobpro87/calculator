@@ -15,21 +15,16 @@ variables:
   containerRegistry : 'tobpro87.hub.docker.com'
 
 steps:
-- task: docker@2
-  inputs:
-    repository: $(imageName)
-    command: build
-    dockerfile: Dockerfile
-  displayName: Build image
 - task: Docker@2
   inputs:
-    containerRegistry: $(containerRegistry)
-    repository: $(imageName)
-    command: push
-    tags: |
-      $(Build.BuildNumber)
-      latest
-  displayName: Push image
+    containerRegistry: 'tobpro87.hub.docker.com'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'tobpro87.hub.docker.com'
+    repository: 'calculator'
+    command: 'push'
 - task: CMake@1
   inputs:
     cmakeArgs: '..'
