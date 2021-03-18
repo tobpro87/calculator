@@ -15,15 +15,18 @@ variables:
   containerRegistry : 'tobpro87.hub.docker.com'
 
 steps:
-- task: Docker@2
-  inputs:
-    containerRegistry: 'tobpro87.hub.docker.com'
-    repository: tobpro87/calculator
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'tobpro87.hub.docker.com'
+#     repository: tobpro87/calculator
+#     command: 'buildAndPush'
+#     Dockerfile: '**/Dockerfile'
 - task: CMake@1
   inputs:
     cmakeArgs: '..'
 - task: CMake@1
   inputs:
     cmakeArgs: '--build .'
+- task: CMake@1
+  inputs:
+    cmakeArgs: '--build . --target BUILD_TEST'

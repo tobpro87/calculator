@@ -19,3 +19,13 @@ add_test(
     COMMAND
 	hello_world
 )
+
+add_custom_target(
+	BUILD_TEST
+    COMMAND
+	"${CMAKE_CTEST_COMMAND}"
+    WORKING_DIRECTORY
+	"${CMAKE_BINARY_DIR}"	
+)
+
+
