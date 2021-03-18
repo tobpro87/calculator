@@ -11,7 +11,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  imageName : 'calculator'
+  imageName : 'tobpro87/calculator'
   containerRegistry : 'tobpro87.hub.docker.com'
 
 steps:
