@@ -14,8 +14,6 @@ variables:
   imageName : 'calculator'
   containerRegistry : 'tobpro87.hub.docker.com'
 
-
-container:
 steps:
 - task: docker@2
   inputs:
