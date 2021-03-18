@@ -33,7 +33,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'CTest'
-    testResultsFiles: '**/TEST.xml'
+    testResultsFiles: '**/Test.xml'
     searchFolder: '$(Build.SourcesDirectory)/build/Testing'
 - task: CmdLine@2
   inputs:
