@@ -18,7 +18,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'tobpro87.hub.docker.com'
-    repository: calculator
+    repository: tobpro87/calculator
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 - task: CMake@1
